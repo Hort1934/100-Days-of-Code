@@ -1,0 +1,6 @@
+Name|Phone
+Ihor;1234
+Bob;5678
+Alice;9432
+Eric;1544
+Sam;2521
