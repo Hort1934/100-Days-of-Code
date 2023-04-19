@@ -4,10 +4,16 @@ import pandas
 import time
 
 BACKGROUND_COLOR = "#B1DDC6"
-
-data = pandas.read_csv("data/french_words.csv")
-to_learn = data.to_dict(orient="records")
 current_card = {}
+to_learn = {}
+
+try:
+    data = pandas.read_csv("data/words_to_learn.csv")
+except FileNotFoundError:
+    original_data = pandas.read_csv("data/french_words.csv")
+    to_learn = original_data.to_dict(orient="records")
+else:
+    to_learn = data.to_dict(orient="records")
 
 
 def flip_card():
@@ -20,7 +26,7 @@ def button_1_click():
     to_learn.remove(current_card)
     print(len(to_learn))
     data = pandas.DataFrame(to_learn)
-    data.to_csv("data/ords_to_learn.csv")
+    data.to_csv("data/words_to_learn.csv", index=False)
 
     button_2_click()
 
