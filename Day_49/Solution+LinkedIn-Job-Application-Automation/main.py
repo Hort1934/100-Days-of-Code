@@ -24,8 +24,8 @@ def abort_application():
 chrome_driver_path = "YOUR CHROME DRIVER PATH"
 
 # Optional - Automatically keep your chromedriver up to date.
-from webdriver.chrome import ChromeDriverManager  # pip install webdriver-manager
-chrome_driver_path = ChromeDriverManager(path=YOUR CHROME DRIVER FOLDER).install()
+# from webdriver.Chrome import ChromeDriverManager  # pip install webdriver-manager
+# chrome_driver_path = ChromeDriverManager(path="YOUR CHROME DRIVER FOLDER").install()
 
 # Optional - Keep the browser open if the script crashes.
 chrome_options = webdriver.ChromeOptions()
