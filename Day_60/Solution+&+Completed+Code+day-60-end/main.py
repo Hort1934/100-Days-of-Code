@@ -4,7 +4,8 @@ import requests
 
 posts = requests.get("https://api.npoint.io/43644ec4f0013682fc0d").json()
 OWN_EMAIL = YOUR OWN EMAIL ADDRESS
-OWN_PASSWORD = YOUR EMAIL ADDRESS PASSWORD
+OWN_PASSWORD = YOUR OWN EMAIL PASSWORD
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -45,4 +46,8 @@ def send_email(name, email, phone, message):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    #if you want your web server to run in repl.it, use the next line:
+    app.run(host='0.0.0.0', port=8080)
+
+    #If you want your web server to run locally on your computer, use this:
+    # app.run(debug=True)
