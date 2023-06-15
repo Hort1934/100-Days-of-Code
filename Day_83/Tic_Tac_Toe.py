@@ -3,22 +3,25 @@
 # Create the game board
 board = [" " for _ in range(9)]
 
+
 # Function to print the game board
 def print_board():
     print("-------------")
     for i in range(3):
-        print("|", board[i*3], "|", board[i*3 + 1], "|", board[i*3 + 2], "|")
+        print("|", board[i * 3], "|", board[i * 3 + 1], "|", board[i * 3 + 2], "|")
         print("-------------")
+
 
 # Function to check if the board is full
 def is_board_full():
     return " " not in board
 
+
 # Function to check for a win
 def check_win(player):
     # Check rows
     for i in range(3):
-        if board[i*3] == board[i*3 + 1] == board[i*3 + 2] == player:
+        if board[i * 3] == board[i * 3 + 1] == board[i * 3 + 2] == player:
             return True
     # Check columns
     for i in range(3):
@@ -30,6 +33,7 @@ def check_win(player):
     if board[2] == board[4] == board[6] == player:
         return True
     return False
+
 
 # Function to play the game
 def play_game():
@@ -55,6 +59,7 @@ def play_game():
             break
 
         current_player = "O" if current_player == "X" else "X"
+
 
 # Start the game
 play_game()
