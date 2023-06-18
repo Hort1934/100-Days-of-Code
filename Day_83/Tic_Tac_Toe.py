@@ -40,7 +40,11 @@ def play_game():
     current_player = "X"
     while True:
         print_board()
-        position = int(input("Enter a position (1-9): ")) - 1
+        try:
+            position = int(input("Enter a position (1-9): ")) - 1
+        except ValueError or IndexError as err:
+            print(f'Invalid input : {err}. Please try again')
+            continue
 
         if board[position] != " ":
             print("Invalid move. Try again.")
